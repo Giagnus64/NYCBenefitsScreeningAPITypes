@@ -1,26 +1,82 @@
-// Type definitions for NYC BENEFITS SCREENING API 
+// Type definitions for NYC BENEFITS SCREENING API
 // Project: NYC Benefits Screening API [https://screeningapidocs.cityofnewyork.us/overview]
 // Definitions by: Gianfranco Nuschese <[~A URL FOR YOU~]>
 
-export type LivingRentalType = "" | "MarketRate" | "RentControlled" | "FamilyHome" | "Condo" | "NYCHA" | "RentRegulatedHotel" | "Section213" | "LimitedDividendDevelopment" | "MitchellLama" | "RedevelopmentCompany" | "HDFC";
-
+export type LivingRentalType =
+    | ""
+    | "MarketRate"
+    | "RentControlled"
+    | "FamilyHome"
+    | "Condo"
+    | "NYCHA"
+    | "RentRegulatedHotel"
+    | "Section213"
+    | "LimitedDividendDevelopment"
+    | "MitchellLama"
+    | "RedevelopmentCompany"
+    | "HDFC";
 
 export interface HouseholdConfig {
-cashOnHand: number;
-livingRenting: boolean;
-livingRentalType?: LivingRentalType;
-livingOwner: boolean;
-livingStayingWithFriend: boolean;
-livingHotel: boolean;
-livingShelter: boolean;
-livingPreferNotToSay: boolean;
+    cashOnHand: number;
+    livingRenting: boolean;
+    livingRentalType?: LivingRentalType;
+    livingOwner: boolean;
+    livingStayingWithFriend: boolean;
+    livingHotel: boolean;
+    livingShelter: boolean;
+    livingPreferNotToSay: boolean;
 }
 
-export type HouseholdMemberType = "" | "HeadOfHousehold" | "Child" | "FosterChild" | "StepChild" | "Grandchild" | "Spouse" | "Parent" | "FosterParent"| "StepParent" | "GrandParent" |"SisterBrother"| "StepSisterStepBrother" | "BoyfriendGirlfriend"| "DomesticPartner" | "Unrelated" | "Other";
+export type HouseholdMemberType =
+    | ""
+    | "HeadOfHousehold"
+    | "Child"
+    | "FosterChild"
+    | "StepChild"
+    | "Grandchild"
+    | "Spouse"
+    | "Parent"
+    | "FosterParent"
+    | "StepParent"
+    | "GrandParent"
+    | "SisterBrother"
+    | "StepSisterStepBrother"
+    | "BoyfriendGirlfriend"
+    | "DomesticPartner"
+    | "Unrelated"
+    | "Other";
 
-export type IncomeType = "" | "Wages" | "SelfEmployment" | "Unemployment" | "CashAssistance" | "ChildSupport" | "DisabilityMedicaid" | "SSI" | "SSDependent" | "SSDisability" | "SSSurvivor" | "SSRetirement" | "NYSDisability" | "Veteran" | "Pension" | "DeferredComp" | "WorkersComp" | "Alimony" | "Boarder" | "Gifts" | "Rental" | "Investment";
+export type IncomeType =
+    | ""
+    | "Wages"
+    | "SelfEmployment"
+    | "Unemployment"
+    | "CashAssistance"
+    | "ChildSupport"
+    | "DisabilityMedicaid"
+    | "SSI"
+    | "SSDependent"
+    | "SSDisability"
+    | "SSSurvivor"
+    | "SSRetirement"
+    | "NYSDisability"
+    | "Veteran"
+    | "Pension"
+    | "DeferredComp"
+    | "WorkersComp"
+    | "Alimony"
+    | "Boarder"
+    | "Gifts"
+    | "Rental"
+    | "Investment";
 
-export type IncomeExpenseFrequency = "" | "Weekly" | "BiWeekly" | "Monthly" | "Semimonthly" | "Yearly";
+export type IncomeExpenseFrequency =
+    | ""
+    | "Weekly"
+    | "BiWeekly"
+    | "Monthly"
+    | "Semimonthly"
+    | "Yearly";
 
 export interface IncomeConfig {
     amount: number;
@@ -28,7 +84,19 @@ export interface IncomeConfig {
     frequency: IncomeExpenseFrequency;
 }
 
-export type ExpenseType = "" | "ChildCare" | "ChildSupport" | "DependentCare" | "Rent" | "Medical" | "Heating" | "Cooling" | "Mortgage" | "Utilities" | "Telephone" | "InsurancePremiums";
+export type ExpenseType =
+    | ""
+    | "ChildCare"
+    | "ChildSupport"
+    | "DependentCare"
+    | "Rent"
+    | "Medical"
+    | "Heating"
+    | "Cooling"
+    | "Mortgage"
+    | "Utilities"
+    | "Telephone"
+    | "InsurancePremiums";
 
 export interface ExpenseConfig {
     amount: number;
@@ -40,7 +108,7 @@ export interface PersonConfig {
     age: number;
     student: boolean;
     studentFulltime: boolean;
-    pregnant:boolean;
+    pregnant: boolean;
     unemployed: boolean;
     unemployedWorkedLast18Months: boolean;
     blind: boolean;
@@ -51,8 +119,8 @@ export interface PersonConfig {
     householdMemberType: HouseholdMemberType;
     livingOwnerOnDeed?: boolean;
     livingRentalOnLease?: boolean;
-    incomes?:[IncomeConfig] 
-    expenses?:[ExpenseConfig]
+    incomes?: [IncomeConfig];
+    expenses?: [ExpenseConfig];
 }
 
 export interface RequestConfig {
@@ -60,9 +128,30 @@ export interface RequestConfig {
     person: [PersonConfig];
     withholdPayload: boolean;
 }
+// Helpers to allow referencing Big and BigConstructor from inside the global declaration without creating a self reference
+export type RequestConfig_ = RequestConfig;
+export type IncomeConfig_ = IncomeConfig;
+export type IncomeType_ = IncomeType;
+export type ExpenseConfig_ = ExpenseConfig;
+export type ExpenseType_ = ExpenseType;
+export type IncomeExpenseFrequency_ = IncomeExpenseFrequency;
+export type PersonConfig_ = PersonConfig;
+export type HouseholdConfig_ = HouseholdConfig;
+export type HouseholdMemberType_ = HouseholdMemberType;
+export type LivingRentalType_ = LivingRentalType;
 
-declare global{
-    namespace NYCBSTypes{
-        
+
+declare global {
+    namespace NYCBSTypes {
+        type RequestConfig = RequestConfig_;
+        type IncomeConfig = IncomeConfig_;
+        type IncomeType = IncomeType_;
+        type ExpenseConfig = ExpenseConfig_;
+        type ExpenseType = ExpenseType_;
+        type IncomeExpenseFrequency = IncomeExpenseFrequency_;
+        type PersonConfig = PersonConfig_;
+        type HouseholdConfig = HouseholdConfig_;
+        type HouseholdMemberType = HouseholdMemberType_;
+        type LivingRentalType = LivingRentalType_;
     }
 }
