@@ -9,12 +9,12 @@
  */
 
 
-export as namespace NYCBSTypes{
+declare namespace NYCBSTypes{
 
-    export type LivingRentalType = "" | "MarketRate" | "RentControlled" | "FamilyHome" | "Condo" | "NYCHA" | "RentRegulatedHotel" | "Section213" | "LimitedDividendDevelopment" | "MitchellLama" | "RedevelopmentCompany" | "HDFC";
+    type LivingRentalType = "" | "MarketRate" | "RentControlled" | "FamilyHome" | "Condo" | "NYCHA" | "RentRegulatedHotel" | "Section213" | "LimitedDividendDevelopment" | "MitchellLama" | "RedevelopmentCompany" | "HDFC";
 
 
-    export interface HouseholdConfig {
+    interface HouseholdConfig {
     cashOnHand: number;
     livingRenting: boolean;
     livingRentalType?: LivingRentalType;
@@ -25,27 +25,27 @@ export as namespace NYCBSTypes{
     livingPreferNotToSay: boolean;
     }
 
-    export type HouseholdMemberType = "" | "HeadOfHousehold" | "Child" | "FosterChild" | "StepChild" | "Grandchild" | "Spouse" | "Parent" | "FosterParent"| "StepParent" | "GrandParent" |"SisterBrother"| "StepSisterStepBrother" | "BoyfriendGirlfriend"| "DomesticPartner" | "Unrelated" | "Other";
+    type HouseholdMemberType = "" | "HeadOfHousehold" | "Child" | "FosterChild" | "StepChild" | "Grandchild" | "Spouse" | "Parent" | "FosterParent"| "StepParent" | "GrandParent" |"SisterBrother"| "StepSisterStepBrother" | "BoyfriendGirlfriend"| "DomesticPartner" | "Unrelated" | "Other";
 
-    export type IncomeType = "" | "Wages" | "SelfEmployment" | "Unemployment" | "CashAssistance" | "ChildSupport" | "DisabilityMedicaid" | "SSI" | "SSDependent" | "SSDisability" | "SSSurvivor" | "SSRetirement" | "NYSDisability" | "Veteran" | "Pension" | "DeferredComp" | "WorkersComp" | "Alimony" | "Boarder" | "Gifts" | "Rental" | "Investment";
+    type IncomeType = "" | "Wages" | "SelfEmployment" | "Unemployment" | "CashAssistance" | "ChildSupport" | "DisabilityMedicaid" | "SSI" | "SSDependent" | "SSDisability" | "SSSurvivor" | "SSRetirement" | "NYSDisability" | "Veteran" | "Pension" | "DeferredComp" | "WorkersComp" | "Alimony" | "Boarder" | "Gifts" | "Rental" | "Investment";
 
-    export type IncomeExpenseFrequency = "" | "Weekly" | "BiWeekly" | "Monthly" | "Semimonthly" | "Yearly";
+    type IncomeExpenseFrequency = "" | "Weekly" | "BiWeekly" | "Monthly" | "Semimonthly" | "Yearly";
 
-    export interface IncomeConfig {
+    interface IncomeConfig {
         amount: number;
         type: IncomeType;
         frequency: IncomeExpenseFrequency;
     }
 
-    export type ExpenseType = "" | "ChildCare" | "ChildSupport" | "DependentCare" | "Rent" | "Medical" | "Heating" | "Cooling" | "Mortgage" | "Utilities" | "Telephone" | "InsurancePremiums";
+    type ExpenseType = "" | "ChildCare" | "ChildSupport" | "DependentCare" | "Rent" | "Medical" | "Heating" | "Cooling" | "Mortgage" | "Utilities" | "Telephone" | "InsurancePremiums";
 
-    export interface ExpenseConfig {
+    interface ExpenseConfig {
         amount: number;
         type: ExpenseType;
         frequency: IncomeExpenseFrequency;
     }
 
-    export interface PersonConfig {
+    interface PersonConfig {
         age: number;
         student: boolean;
         studentFulltime: boolean;
@@ -64,7 +64,7 @@ export as namespace NYCBSTypes{
         expenses?:[ExpenseConfig]
     }
 
-    export interface RequestConfig {
+    interface RequestConfig {
         household: [HouseholdConfig];
         person: [PersonConfig];
         withholdPayload: boolean;
