@@ -19,6 +19,6 @@
         "forceConsistentCasingInFileNames": true
     },
     "files": [
-        "@types/index.d.ts",
+        "index.d.ts",
     ]
 }
