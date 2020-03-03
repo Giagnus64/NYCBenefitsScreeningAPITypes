@@ -2,7 +2,7 @@
 // Project: NYC Benefits Screening API [https://screeningapidocs.cityofnewyork.us/overview]
 // Definitions by: Gianfranco Nuschese <[https://github.com/Giagnus64]>
 
-//This file follows both the module and global namespace definition styles in case this
+//This file follows both the module and global namespace definition styles in case this module gets expanded or developers' type declaration differs
 
 export type LivingRentalType =
     | ""
@@ -150,6 +150,11 @@ export interface ResponseConfig {
     eligiblePrograms?: [EligibleProgramConfig];
     errors?: [ErrorConfig];
 }
+
+
+//Using global namespace
+
+
 // Helpers to allow referencing Big and BigConstructor from inside the global declaration without creating a self reference
 // export type RequestConfig_ = RequestConfig;
 // export type IncomeConfig_ = IncomeConfig;
@@ -177,7 +182,7 @@ export interface ResponseConfig {
 // //     }
 // // }
 
-// declare module NYCBSTypes {
+// declare namespace NYCBSTypes {
 //     type LivingRentalType =
 //         | ""
 //         | "MarketRate"
