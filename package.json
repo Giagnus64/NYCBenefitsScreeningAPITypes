@@ -1,13 +1,17 @@
 {
-  "name": "nyc_benefits_screening_api_type_declaration",
+  "name": "nycbsa_types",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "description": "Types for the NYC Benefits Screening API",
+  "main": "",
+  "types": "@types/index.d.ts",
+  "scripts": {},
+  "keywords": [
+    "typescript",
+    "types",
+    "NYC Benefits"
+  ],
+  "author": "Gianfranco Nuschese",
+  "license": "MIT",
   "devDependencies": {
     "typescript": "^3.8.2"
   }

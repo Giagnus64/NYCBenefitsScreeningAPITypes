@@ -5,6 +5,7 @@
         "lib": [
             "es6"
         ],
+        "declaration": true,
         "noImplicitAny": true,
         "noImplicitThis": true,
         "strictNullChecks": true,
@@ -18,6 +19,6 @@
         "forceConsistentCasingInFileNames": true
     },
     "files": [
-        "index.d.ts",
+        "@types/index.d.ts",
     ]
 }

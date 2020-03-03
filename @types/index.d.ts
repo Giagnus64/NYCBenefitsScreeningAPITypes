@@ -286,5 +286,5 @@ declare global {
 //         household: [HouseholdConfig];
 //         person: [PersonConfig];
 //         withholdPayload: boolean;
-//     }
+//   
 // }
