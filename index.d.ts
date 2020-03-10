@@ -19,7 +19,7 @@ export namespace NYCBSA {
         | "HDFC";
 
     export interface HouseholdConfig {
-        cashOnHand: number;
+        cashOnHand: string;
         livingRenting: boolean;
         livingRentalType?: LivingRentalType;
         livingOwner: boolean;
@@ -81,7 +81,7 @@ export namespace NYCBSA {
         | "Yearly";
 
     export interface IncomeConfig {
-        amount: number;
+        amount: string;
         type: IncomeType;
         frequency: IncomeExpenseFrequency;
     }
@@ -101,13 +101,13 @@ export namespace NYCBSA {
         | "InsurancePremiums";
 
     export interface ExpenseConfig {
-        amount: number;
+        amount: string;
         type: ExpenseType;
         frequency: IncomeExpenseFrequency;
     }
 
     export interface PersonConfig {
-        age: number;
+        age: string;
         student: boolean;
         studentFulltime: boolean;
         pregnant: boolean;
@@ -167,7 +167,7 @@ export type LivingRentalType =
 | "HDFC";
 
 export interface HouseholdConfig {
-cashOnHand: number;
+cashOnHand: string;
 livingRenting: boolean;
 livingRentalType?: LivingRentalType;
 livingOwner: boolean;
@@ -229,7 +229,7 @@ export type IncomeExpenseFrequency =
 | "Yearly";
 
 export interface IncomeConfig {
-amount: number;
+amount: string;
 type: IncomeType;
 frequency: IncomeExpenseFrequency;
 }
@@ -249,13 +249,13 @@ export type ExpenseType =
 | "InsurancePremiums";
 
 export interface ExpenseConfig {
-amount: number;
+amount: string;
 type: ExpenseType;
 frequency: IncomeExpenseFrequency;
 }
 
 export interface PersonConfig {
-age: number;
+age: string;
 student: boolean;
 studentFulltime: boolean;
 pregnant: boolean;
